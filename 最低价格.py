@@ -14,10 +14,11 @@ headers={'Referer': 'http://b2c.csair.com/B2C40/modules/bookingnew/main/flightSe
 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
 'X-Requested-With': 'XMLHttpRequest',
 'Content-type':'application/json'}
-# airport=['CAN','CKG','SHA','PEK','CTU','SZX','PVG']
+
 d=lambda x:x['date']
 p=lambda x:x['price']
-airport=['CAN','CKG']
+airport=['CAN','CKG','SHA','PEK','CTU','SZX','PVG']
+# airport=['CAN','CKG']
 for dep in airport:
     for arr in airport:
         if dep!=arr:
