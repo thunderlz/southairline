@@ -37,7 +37,7 @@ headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWeb
 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8',
 'Referer':'http: // b2c.csair.com / B2C40 / modules / bookingnew / main / flightSelectDirect.html?t = S & c1 = PEK & c2 = CTU & d1 = 2018 - 04 - 29 & at = 1 & ct = 0 & it = 0'}
 
-datelist=datelist('20181019','20181119')
+datelist=datelist('20181115','20181231')
 print(datelist)
 # airport=['CAN','CKG','SHA','PEK','CTU','SZX','PVG']
 airport=['CAN','CKG']
