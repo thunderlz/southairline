@@ -4,6 +4,7 @@ import time
 import pandas as pd
 from pandas import DataFrame,Series
 from datetime import datetime
+import time
 
 def datelist(beginDate, endDate):
     # beginDate, endDate是形如‘20160601’的字符串或datetime格式
@@ -12,6 +13,7 @@ def datelist(beginDate, endDate):
 
 def FindFlight(s,dep,arr,date,headers,proxie):
     data = {'json': '{"depcity\":"' + dep + '\", "arrcity":\"' + arr + '\", "flightdate":\"' + date + '\", "adultnum":"1", "childnum":"0", "infantnum":"0", "cabinorder":"0", "airline":"1", "flytype":"0", "international":"0", "action":"0", "segtype":"1", "cache":"1", "preUrl":"", "isMember":""}'}
+    time.sleep(10)
     rq = s.post(url, headers=headers, data=data,proxies=proxie)
     if rq.status_code==200:
         try:
@@ -37,7 +39,7 @@ headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWeb
 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8',
 'Referer':'http: // b2c.csair.com / B2C40 / modules / bookingnew / main / flightSelectDirect.html?t = S & c1 = PEK & c2 = CTU & d1 = 2018 - 04 - 29 & at = 1 & ct = 0 & it = 0'}
 
-datelist=datelist('20181115','20181231')
+datelist=datelist('20181116','20181231')
 print(datelist)
 # airport=['CAN','CKG','SHA','PEK','CTU','SZX','PVG']
 airport=['CAN','CKG']
