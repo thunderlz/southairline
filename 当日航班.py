@@ -13,7 +13,7 @@ def datelist(beginDate, endDate):
 
 def FindFlight(s,dep,arr,date,headers,proxie):
     data = {'json': '{"depcity\":"' + dep + '\", "arrcity":\"' + arr + '\", "flightdate":\"' + date + '\", "adultnum":"1", "childnum":"0", "infantnum":"0", "cabinorder":"0", "airline":"1", "flytype":"0", "international":"0", "action":"0", "segtype":"1", "cache":"1", "preUrl":"", "isMember":""}'}
-    time.sleep(10)
+    time.sleep(6)
     rq = s.post(url, headers=headers, data=data,proxies=proxie)
     if rq.status_code==200:
         try:
@@ -41,8 +41,8 @@ headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWeb
 
 datelist=datelist('20181116','20181231')
 print(datelist)
-# airport=['CAN','CKG','SHA','PEK','CTU','SZX','PVG']
-airport=['CAN','CKG']
+airport=['CAN','CKG','SHA','PEK','CTU','SZX','PVG']
+# airport=['CAN','CKG']
 # proxie={'http':'http://27.40.148.69:61234',
 #         'https':'http://27.40.148.69:61234'
 #         }
@@ -63,4 +63,4 @@ for date in datelist:
                 else:
                     df=pd.concat([df,df_temp])
 
-df.to_csv('flights{}.csv'.format(datetime.now().strftime('%y%m%d%H%M%S')))
+df.to_csv('flights{}.csv'.format(datetime.now().strftime('%y%m%d%H%M')))
