@@ -20,7 +20,7 @@ class southairticket:
                  "cabinOrder":"0","airLine":1,"flyType":0,
                  "international":"0","action":"0","segType":"1","cache":0,"preUrl":"MIP002","isMember":""}
         self.session=requests.Session()
-        self.engine = create_engine('mysql+pymysql://root:751982THUNDERlz@localhost:3306/saflights')
+        self.engine = create_engine('mysql+pymysql://root:751982leizhen@localhost:3306/saflights')
 
 
         
